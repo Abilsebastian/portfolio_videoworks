@@ -6,7 +6,7 @@ const MEDIA_LIBRARY = {
     sources: {
       hero: {
         kind: 'video',
-        src: 'assets/media/hero/showreel.mp4',
+        src: 'assets/media/waitisover_reel2_60fps.mp4',
         poster: 'assets/images/hero/showreel-poster.jpg',
         muted: true,
         loop: true,
@@ -25,7 +25,7 @@ const MEDIA_LIBRARY = {
     sources: {
       default: {
         kind: 'image',
-        src: 'assets/images/abil-portrait.jpg',
+        src: 'assets/images/ABPORTRAIT.jpg',
         alt: 'Abil Sebastian portrait'
       }
     },

@@ -4,17 +4,19 @@ const heroPoster = document.getElementById('heroPoster');
 const heroVid = document.getElementById('heroVid');
 const HERO_MEDIA_KEY = heroVid ? heroVid.dataset.mediaKey : '';
 
-function playHero() {
-  if (!window.MediaLibrary || !heroVid || !heroPoster) return;
+function hideHeroPoster() {
+  if (!heroPoster) return;
+
+  heroPoster.classList.add('gone');
+  heroPoster.setAttribute('aria-hidden', 'true');
+}
+
+function autoplayHero() {
+  if (!window.MediaLibrary || !heroVid) return;
 
   if (!window.MediaLibrary.hasSource(HERO_MEDIA_KEY, 'hero')) {
     window.MediaLibrary.renderMediaSlot(heroVid, HERO_MEDIA_KEY, 'hero');
-    heroPoster.classList.add('gone');
-    return;
-  }
-
-  if (heroVid.dataset.mediaLoaded === 'true') {
-    heroPoster.classList.add('gone');
+    hideHeroPoster();
     return;
   }
 
@@ -29,18 +31,18 @@ function playHero() {
   if (!node) return;
 
   heroVid.dataset.mediaLoaded = 'true';
-  heroPoster.classList.add('gone');
+  hideHeroPoster();
+
+  if (typeof node.play === 'function') {
+    const playAttempt = node.play();
+    if (playAttempt && typeof playAttempt.catch === 'function') {
+      playAttempt.catch(() => {
+        // Keep the rendered video in place even if autoplay is blocked.
+      });
+    }
+  }
 }
 
-if (heroPoster && heroVid) {
-  if (!window.MediaLibrary || !window.MediaLibrary.hasSource(HERO_MEDIA_KEY, 'hero')) {
-    playHero();
-  } else {
-    heroPoster.addEventListener('click', playHero);
-    heroPoster.addEventListener('keydown', (event) => {
-      if (event.key !== 'Enter' && event.key !== ' ') return;
-      event.preventDefault();
-      playHero();
-    });
-  }
+if (heroVid) {
+  autoplayHero();
 }
