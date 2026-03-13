@@ -1,29 +1,46 @@
-// hero.js — Hero showreel background video
-
-// ─────────────────────────────────────────────
-// ↓↓↓  REPLACE WITH YOUR ACTUAL VIDEO URL  ↓↓↓
-//
-// YouTube (muted loop):
-//   https://www.youtube.com/embed/YOUR_ID?autoplay=1&mute=1&loop=1&playlist=YOUR_ID&controls=0&modestbranding=1&playsinline=1
-//
-// Vimeo (background mode):
-//   https://player.vimeo.com/video/YOUR_ID?autoplay=1&loop=1&muted=1&background=1
-//
-// Self-hosted (see index.html for <video> tag approach):
-//   Replace iframe with: <video src="assets/video/showreel.mp4" autoplay muted loop playsinline></video>
-// ─────────────────────────────────────────────
-const SHOWREEL_URL = 'https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1&mute=1&loop=1&playlist=YOUR_VIDEO_ID&controls=0&modestbranding=1&playsinline=1';
+// hero.js - hero showreel playback using the shared media registry
 
 const heroPoster = document.getElementById('heroPoster');
-const heroVid    = document.getElementById('heroVid');
+const heroVid = document.getElementById('heroVid');
+const HERO_MEDIA_KEY = heroVid ? heroVid.dataset.mediaKey : '';
 
 function playHero() {
-  const iframe = document.createElement('iframe');
-  iframe.src    = SHOWREEL_URL;
-  iframe.allow  = 'autoplay; fullscreen';
-  iframe.setAttribute('frameborder', '0');
-  heroVid.appendChild(iframe);
+  if (!window.MediaLibrary || !heroVid || !heroPoster) return;
+
+  if (!window.MediaLibrary.hasSource(HERO_MEDIA_KEY, 'hero')) {
+    window.MediaLibrary.renderMediaSlot(heroVid, HERO_MEDIA_KEY, 'hero');
+    heroPoster.classList.add('gone');
+    return;
+  }
+
+  if (heroVid.dataset.mediaLoaded === 'true') {
+    heroPoster.classList.add('gone');
+    return;
+  }
+
+  const node = window.MediaLibrary.renderMediaSlot(heroVid, HERO_MEDIA_KEY, 'hero', {
+    autoplay: true,
+    loop: true,
+    muted: true,
+    playsinline: true,
+    preload: 'auto'
+  });
+
+  if (!node) return;
+
+  heroVid.dataset.mediaLoaded = 'true';
   heroPoster.classList.add('gone');
 }
 
-heroPoster.addEventListener('click', playHero);
+if (heroPoster && heroVid) {
+  if (!window.MediaLibrary || !window.MediaLibrary.hasSource(HERO_MEDIA_KEY, 'hero')) {
+    playHero();
+  } else {
+    heroPoster.addEventListener('click', playHero);
+    heroPoster.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      event.preventDefault();
+      playHero();
+    });
+  }
+}

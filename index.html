@@ -51,10 +51,10 @@
     <div class="hero-bg"></div>
     <div class="hero-glow"></div>
     <div class="hero-lines"></div>
-    <div class="hero-video-area" id="heroVid"></div>
+    <div class="hero-video-area media-slot" id="heroVid" data-media-slot data-media-key="heroShowreel" data-media-variant="hero"></div>
     <div class="hero-vignette"></div>
 
-    <div class="hero-poster" id="heroPoster">
+    <div class="hero-poster" id="heroPoster" role="button" tabindex="0" aria-label="Play showreel">
       <div class="play-ring">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
           <polygon points="5,3 19,12 5,21"/>
@@ -83,18 +83,7 @@
     <p class="sec-label" data-r>About</p>
     <div class="about-wrap">
       <div class="about-img" data-r>
-        <!--
-          REPLACE with your photo:
-          <img src="assets/images/abil.jpg" alt="Abil Sebastian"/>
-        -->
-        <div class="about-img-placeholder">
-          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
-            <rect x="3" y="3" width="18" height="18" rx="2"/>
-            <circle cx="8.5" cy="8.5" r="1.5"/>
-            <polyline points="21 15 16 10 5 21"/>
-          </svg>
-          <span>Your photo</span>
-        </div>
+        <div class="media-slot about-media" data-media-slot data-media-key="aboutPortrait"></div>
       </div>
       <div class="about-right">
         <h2 class="about-heading" data-r>A filmmaker's<br/>eye for <em>every<br/>frame</em></h2>
@@ -142,12 +131,9 @@
     <div class="wgrid" id="wgrid">
 
       <!-- Work Item 1 — REPLACE video URL with your actual embed link -->
-      <div class="wi" data-cat="restaurant" data-r
-           data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1">
+      <div class="wi" data-cat="restaurant" data-r data-media-key="work01">
         <div class="wi-thumb">
-          <div class="wi-bg wi-bg--1"></div>
-          <!-- OPTIONAL: add a thumbnail image -->
-          <!-- <img src="assets/images/work/vapiano-ep01.jpg" alt="Not My Section EP01" class="wi-img"/> -->
+          <div class="media-slot wi-media" data-media-slot data-media-key="work01" data-media-variant="thumb"></div>
           <div class="wi-frame">01</div>
           <div class="wi-hover">
             <div class="wi-play-btn">
@@ -163,10 +149,9 @@
       </div>
 
       <!-- Work Item 2 -->
-      <div class="wi" data-cat="brand" data-r
-           data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1">
+      <div class="wi" data-cat="brand" data-r data-media-key="work02">
         <div class="wi-thumb">
-          <div class="wi-bg wi-bg--2"></div>
+          <div class="media-slot wi-media" data-media-slot data-media-key="work02" data-media-variant="thumb"></div>
           <div class="wi-frame">02</div>
           <div class="wi-hover">
             <div class="wi-play-btn">
@@ -182,10 +167,9 @@
       </div>
 
       <!-- Work Item 3 -->
-      <div class="wi" data-cat="film" data-r
-           data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1">
+      <div class="wi" data-cat="film" data-r data-media-key="work03">
         <div class="wi-thumb">
-          <div class="wi-bg wi-bg--3"></div>
+          <div class="media-slot wi-media" data-media-slot data-media-key="work03" data-media-variant="thumb"></div>
           <div class="wi-frame">03</div>
           <div class="wi-hover">
             <div class="wi-play-btn">
@@ -201,10 +185,9 @@
       </div>
 
       <!-- Work Item 4 -->
-      <div class="wi" data-cat="restaurant" data-r
-           data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1">
+      <div class="wi" data-cat="restaurant" data-r data-media-key="work04">
         <div class="wi-thumb">
-          <div class="wi-bg wi-bg--4"></div>
+          <div class="media-slot wi-media" data-media-slot data-media-key="work04" data-media-variant="thumb"></div>
           <div class="wi-frame">04</div>
           <div class="wi-hover">
             <div class="wi-play-btn">
@@ -220,10 +203,9 @@
       </div>
 
       <!-- Work Item 5 -->
-      <div class="wi" data-cat="brand" data-r
-           data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1">
+      <div class="wi" data-cat="brand" data-r data-media-key="work05">
         <div class="wi-thumb">
-          <div class="wi-bg wi-bg--5"></div>
+          <div class="media-slot wi-media" data-media-slot data-media-key="work05" data-media-variant="thumb"></div>
           <div class="wi-frame">05</div>
           <div class="wi-hover">
             <div class="wi-play-btn">
@@ -239,10 +221,9 @@
       </div>
 
       <!-- Work Item 6 -->
-      <div class="wi" data-cat="film" data-r
-           data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1">
+      <div class="wi" data-cat="film" data-r data-media-key="work06">
         <div class="wi-thumb">
-          <div class="wi-bg wi-bg--6"></div>
+          <div class="media-slot wi-media" data-media-slot data-media-key="work06" data-media-variant="thumb"></div>
           <div class="wi-frame">06</div>
           <div class="wi-hover">
             <div class="wi-play-btn">
@@ -258,10 +239,9 @@
       </div>
 
       <!-- Work Item 7 -->
-      <div class="wi" data-cat="restaurant" data-r
-           data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1">
+      <div class="wi" data-cat="restaurant" data-r data-media-key="work07">
         <div class="wi-thumb">
-          <div class="wi-bg wi-bg--7"></div>
+          <div class="media-slot wi-media" data-media-slot data-media-key="work07" data-media-variant="thumb"></div>
           <div class="wi-frame">07</div>
           <div class="wi-hover">
             <div class="wi-play-btn">
@@ -289,8 +269,7 @@
         </svg>
         Close
       </button>
-      <div class="modal-iframe-wrap">
-        <iframe id="mIframe" src="" allowfullscreen allow="autoplay"></iframe>
+      <div class="modal-media-wrap" id="modalMedia">
       </div>
     </div>
   </div>
@@ -406,6 +385,7 @@
   <script src="js/cursor.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/reveal.js"></script>
+  <script src="js/media.js"></script>
   <script src="js/hero.js"></script>
   <script src="js/work.js"></script>
   <script src="js/modal.js"></script>
