@@ -15,16 +15,24 @@
 .about-img {
   position: sticky;
   top: 120px;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
   background: var(--bg-3);
   border: 1px solid var(--faint);
 }
 
-.about-img img {
+.about-media {
+  width: 100%;
+  height: 100%;
+}
+
+.about-img img,
+.about-media .media-node--image {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 24%;
 }
 
 .about-img-placeholder {

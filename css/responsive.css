@@ -36,7 +36,7 @@
   .about-img {
     position: static;
     max-width: 100%;
-    aspect-ratio: 3 / 2;
+    aspect-ratio: 4 / 5;
   }
 
   /* Work grid — stack to full width */
