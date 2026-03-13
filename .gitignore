@@ -1,0 +1,11 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+
+# Large video files (host these on YouTube/Vimeo instead)
+assets/video/*.mp4
+assets/video/*.mov
+assets/video/*.webm

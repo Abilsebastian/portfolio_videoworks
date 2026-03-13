@@ -1,0 +1,11 @@
+/* animations.css — Scroll reveal */
+[data-r] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+[data-r].in {
+  opacity: 1;
+  transform: translateY(0);
+}

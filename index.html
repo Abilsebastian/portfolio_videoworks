@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Abil Sebastian — Filmmaker & Content Creator. Founder of draftClub Studios, Riga Latvia."/>
+  <title>Abil Sebastian — Filmmaker</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/reset.css"/>
+  <link rel="stylesheet" href="css/variables.css"/>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/nav.css"/>
+  <link rel="stylesheet" href="css/hero.css"/>
+  <link rel="stylesheet" href="css/about.css"/>
+  <link rel="stylesheet" href="css/work.css"/>
+  <link rel="stylesheet" href="css/services.css"/>
+  <link rel="stylesheet" href="css/contact.css"/>
+  <link rel="stylesheet" href="css/modal.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+  <link rel="stylesheet" href="css/responsive.css"/>
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div id="cur"></div>
+  <div id="cur-r"></div>
+
+  <!-- ── NAV ── -->
+  <nav id="nav">
+    <a href="#hero" class="nav-brand">
+      <span class="nav-brand-name">Abil Sebastian</span>
+      <span class="nav-brand-sub">draftClub Studios</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Let's talk</a>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-glow"></div>
+    <div class="hero-lines"></div>
+    <div class="hero-video-area" id="heroVid"></div>
+    <div class="hero-vignette"></div>
+
+    <div class="hero-poster" id="heroPoster">
+      <div class="play-ring">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <polygon points="5,3 19,12 5,21"/>
+        </svg>
+      </div>
+      <span class="play-label-outer">Play Showreel</span>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-location">Riga, Latvia &nbsp;·&nbsp; Filmmaker</p>
+      <h1 class="hero-title">Abil<br/><em>Sebastian</em></h1>
+      <p class="hero-desc">
+        Founder of <span>draftClub Studios</span> — short-form video for brands,<br/>
+        restaurants &amp; stories worth telling.
+      </p>
+    </div>
+
+    <div class="hero-meta">
+      <span>Scroll</span>
+      <div class="meta-line"></div>
+    </div>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section id="about">
+    <p class="sec-label" data-r>About</p>
+    <div class="about-wrap">
+      <div class="about-img" data-r>
+        <!--
+          REPLACE with your photo:
+          <img src="assets/images/abil.jpg" alt="Abil Sebastian"/>
+        -->
+        <div class="about-img-placeholder">
+          <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+            <rect x="3" y="3" width="18" height="18" rx="2"/>
+            <circle cx="8.5" cy="8.5" r="1.5"/>
+            <polyline points="21 15 16 10 5 21"/>
+          </svg>
+          <span>Your photo</span>
+        </div>
+      </div>
+      <div class="about-right">
+        <h2 class="about-heading" data-r>A filmmaker's<br/>eye for <em>every<br/>frame</em></h2>
+        <blockquote class="about-quote" data-r>"Life hard, but i go harder."</blockquote>
+        <p class="about-bio" data-r>
+          I'm a filmmaker and content creator based in <strong>Riga, Latvia</strong>, and founder of
+          <strong>draftClub Studios</strong> — a production studio focused on short-form video for
+          restaurants, local businesses, and brands building a presence online.
+        </p>
+        <p class="about-bio" data-r>
+          My work is shaped by years of travelling with a camera across <strong>Morocco, Ireland,
+          France, Spain, and beyond</strong> — learning how light, composition, and timing make a
+          story land. That same instinct goes into every client reel I shoot.
+        </p>
+        <div class="about-stats" data-r>
+          <div class="stat">
+            <div class="stat-n">3+</div>
+            <div class="stat-l">Years creating</div>
+          </div>
+          <div class="stat">
+            <div class="stat-n">20+</div>
+            <div class="stat-l">Brands served</div>
+          </div>
+          <div class="stat">
+            <div class="stat-n">41</div>
+            <div class="stat-l">Posts, counting</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WORK ── -->
+  <section id="work">
+    <div class="work-top">
+      <h2 class="work-heading" data-r>Selected<br/><em>Work</em></h2>
+      <div class="filters">
+        <button class="fil on" data-filter="all">All</button>
+        <button class="fil" data-filter="restaurant">Restaurant</button>
+        <button class="fil" data-filter="brand">Brand</button>
+        <button class="fil" data-filter="film">Film</button>
+      </div>
+    </div>
+
+    <div class="wgrid" id="wgrid">
+
+      <!-- Work Item 1 — REPLACE video URL with your actual embed link -->
+      <div class="wi" data-cat="restaurant" data-r
+           data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1">
+        <div class="wi-thumb">
+          <div class="wi-bg wi-bg--1"></div>
+          <!-- OPTIONAL: add a thumbnail image -->
+          <!-- <img src="assets/images/work/vapiano-ep01.jpg" alt="Not My Section EP01" class="wi-img"/> -->
+          <div class="wi-frame">01</div>
+          <div class="wi-hover">
+            <div class="wi-play-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="wi-info">
+          <div class="wi-cat">Restaurant · Split-screen</div>
+          <div class="wi-title">Not My Section — EP 01</div>
+          <div class="wi-client">Vapiano Latvia</div>
+        </div>
+      </div>
+
+      <!-- Work Item 2 -->
+      <div class="wi" data-cat="brand" data-r
+           data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1">
+        <div class="wi-thumb">
+          <div class="wi-bg wi-bg--2"></div>
+          <div class="wi-frame">02</div>
+          <div class="wi-hover">
+            <div class="wi-play-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="wi-info">
+          <div class="wi-cat">Brand · Identity</div>
+          <div class="wi-title">Brand Identity Reel</div>
+          <div class="wi-client">draftClub Studios</div>
+        </div>
+      </div>
+
+      <!-- Work Item 3 -->
+      <div class="wi" data-cat="film" data-r
+           data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1">
+        <div class="wi-thumb">
+          <div class="wi-bg wi-bg--3"></div>
+          <div class="wi-frame">03</div>
+          <div class="wi-hover">
+            <div class="wi-play-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="wi-info">
+          <div class="wi-cat">Short Film</div>
+          <div class="wi-title">Serenity.</div>
+          <div class="wi-client">Personal Work</div>
+        </div>
+      </div>
+
+      <!-- Work Item 4 -->
+      <div class="wi" data-cat="restaurant" data-r
+           data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1">
+        <div class="wi-thumb">
+          <div class="wi-bg wi-bg--4"></div>
+          <div class="wi-frame">04</div>
+          <div class="wi-hover">
+            <div class="wi-play-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="wi-info">
+          <div class="wi-cat">Restaurant · Social</div>
+          <div class="wi-title">Atmosphere Series</div>
+          <div class="wi-client">Casa Nostra Riga</div>
+        </div>
+      </div>
+
+      <!-- Work Item 5 -->
+      <div class="wi" data-cat="brand" data-r
+           data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1">
+        <div class="wi-thumb">
+          <div class="wi-bg wi-bg--5"></div>
+          <div class="wi-frame">05</div>
+          <div class="wi-hover">
+            <div class="wi-play-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="wi-info">
+          <div class="wi-cat">Brand · Product</div>
+          <div class="wi-title">Product Launch Reel</div>
+          <div class="wi-client">Riga Brand</div>
+        </div>
+      </div>
+
+      <!-- Work Item 6 -->
+      <div class="wi" data-cat="film" data-r
+           data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1">
+        <div class="wi-thumb">
+          <div class="wi-bg wi-bg--6"></div>
+          <div class="wi-frame">06</div>
+          <div class="wi-hover">
+            <div class="wi-play-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="wi-info">
+          <div class="wi-cat">Cinematic · Travel</div>
+          <div class="wi-title">Roads &amp; Horizons</div>
+          <div class="wi-client">Personal Work</div>
+        </div>
+      </div>
+
+      <!-- Work Item 7 -->
+      <div class="wi" data-cat="restaurant" data-r
+           data-video="https://www.youtube.com/embed/YOUR_VIDEO_ID?autoplay=1">
+        <div class="wi-thumb">
+          <div class="wi-bg wi-bg--7"></div>
+          <div class="wi-frame">07</div>
+          <div class="wi-hover">
+            <div class="wi-play-btn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="wi-info">
+          <div class="wi-cat">BTS · Social</div>
+          <div class="wi-title">Behind the Section</div>
+          <div class="wi-client">Vapiano Latvia</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── VIDEO MODAL ── -->
+  <div id="modal">
+    <div class="modal-box">
+      <button class="modal-x" id="modalClose">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+        Close
+      </button>
+      <div class="modal-iframe-wrap">
+        <iframe id="mIframe" src="" allowfullscreen allow="autoplay"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SERVICES ── -->
+  <section id="services">
+    <p class="sec-label" data-r>Services</p>
+    <div class="srv-top">
+      <h2 class="srv-heading" data-r>Full-service<br/>video <em>production</em></h2>
+      <p class="srv-sub" data-r>
+        From concept to final cut — I handle everything. Whether you need a
+        <strong>monthly content retainer</strong> or a one-off cinematic reel,
+        draftClub delivers work that performs.
+      </p>
+    </div>
+    <div class="srv-rows">
+      <div class="srv-row" data-r>
+        <div class="srv-n">01.</div>
+        <div class="srv-body">
+          <div class="srv-name">Social Content Retainer</div>
+          <div class="srv-desc">Monthly short-form video packages for Instagram and TikTok. Consistent output, consistent quality — designed around your brand, your audience, your voice.</div>
+        </div>
+        <div class="srv-badge">Monthly</div>
+      </div>
+      <div class="srv-row" data-r>
+        <div class="srv-n">02.</div>
+        <div class="srv-body">
+          <div class="srv-name">Brand Reels &amp; Showreels</div>
+          <div class="srv-desc">High-impact single reels that capture the essence of your brand. Shot and edited for maximum watchtime — from food films to product launches.</div>
+        </div>
+        <div class="srv-badge">Project</div>
+      </div>
+      <div class="srv-row" data-r>
+        <div class="srv-n">03.</div>
+        <div class="srv-body">
+          <div class="srv-name">Short Film &amp; Narrative</div>
+          <div class="srv-desc">Scripted and documentary-style short films. Storytelling-first productions for brands that want to say something that lasts longer than a scroll.</div>
+        </div>
+        <div class="srv-badge">Project</div>
+      </div>
+      <div class="srv-row" data-r>
+        <div class="srv-n">04.</div>
+        <div class="srv-body">
+          <div class="srv-name">Post-Production &amp; Color</div>
+          <div class="srv-desc">Editing, color grading, and delivery. Bring me your raw footage — I'll return a polished, platform-ready cut with intentional, filmic color work.</div>
+        </div>
+        <div class="srv-badge">Add-on</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact">
+    <p class="sec-label" data-r>Contact</p>
+    <div class="contact-grid">
+      <div class="contact-left">
+        <h2 class="contact-heading" data-r>Let's make<br/><em>something</em><br/>great</h2>
+        <p class="contact-sub" data-r>
+          Whether you're a brand looking for a content partner, a restaurant wanting reels,
+          or a studio with a role — I'd love to hear from you.
+        </p>
+        <div class="contact-links" data-r>
+          <a href="mailto:hello@draftclub.studio" class="c-link">
+            <span class="c-link-name">Email</span>
+            <span class="c-link-val">hello@draftclub.studio</span>
+            <span class="c-link-arr">↗</span>
+          </a>
+          <a href="https://instagram.com/draftclub.studios" target="_blank" class="c-link">
+            <span class="c-link-name">Instagram</span>
+            <span class="c-link-val">@draftclub.studios</span>
+            <span class="c-link-arr">↗</span>
+          </a>
+          <a href="https://instagram.com/sometravelstuffs" target="_blank" class="c-link">
+            <span class="c-link-name">Personal IG</span>
+            <span class="c-link-val">@sometravelstuffs</span>
+            <span class="c-link-arr">↗</span>
+          </a>
+          <a href="#" class="c-link">
+            <span class="c-link-name">Based in</span>
+            <span class="c-link-val">Riga, Latvia</span>
+            <span class="c-link-arr">—</span>
+          </a>
+        </div>
+      </div>
+      <div class="contact-right">
+        <form class="cform" id="contactForm" novalidate>
+          <div class="fg">
+            <label class="flabel" for="name">Your name</label>
+            <input type="text" id="name" class="finput" placeholder="Jane Smith" required/>
+          </div>
+          <div class="fg">
+            <label class="flabel" for="email">Email</label>
+            <input type="email" id="email" class="finput" placeholder="jane@brand.com" required/>
+          </div>
+          <div class="fg">
+            <label class="flabel" for="message">What are you looking for?</label>
+            <textarea id="message" class="ftextarea" placeholder="Tell me about your project or the role you're hiring for…" required></textarea>
+          </div>
+          <button type="submit" class="fsub">Send message →</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <span class="footer-brand">Abil Sebastian</span>
+    <span>© 2025 draftClub Studios — Riga, Latvia</span>
+    <span><a href="https://instagram.com/sometravelstuffs" target="_blank">@sometravelstuffs</a></span>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/cursor.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/reveal.js"></script>
+  <script src="js/hero.js"></script>
+  <script src="js/work.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/contact.js"></script>
+
+</body>
+</html>

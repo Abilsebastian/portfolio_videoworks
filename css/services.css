@@ -1,0 +1,93 @@
+/* services.css */
+#services {
+  background: var(--bg-1);
+  border-top: 1px solid var(--faint);
+}
+
+.srv-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 96px;
+  align-items: end;
+  margin-bottom: 80px;
+}
+
+.srv-heading {
+  font-family: var(--serif);
+  font-size: clamp(38px, 4.5vw, 64px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+
+.srv-heading em {
+  font-style: italic;
+  color: rgba(240, 237, 230, 0.4);
+}
+
+.srv-sub {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.75;
+  font-weight: 300;
+  max-width: 420px;
+}
+
+.srv-sub strong {
+  color: var(--cream);
+  font-weight: 400;
+}
+
+/* Service rows */
+.srv-row {
+  display: grid;
+  grid-template-columns: 52px 1fr auto;
+  gap: 32px;
+  align-items: start;
+  padding: 36px 0;
+  border-top: 1px solid var(--faint);
+  transition: border-color 0.2s;
+}
+
+.srv-row:last-child { border-bottom: 1px solid var(--faint); }
+.srv-row:hover { border-color: rgba(200, 137, 58, 0.3); }
+
+.srv-n {
+  font-family: var(--serif);
+  font-size: 13px;
+  font-style: italic;
+  color: rgba(200, 137, 58, 0.4);
+  padding-top: 5px;
+}
+
+.srv-name {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 9px;
+  color: var(--cream);
+}
+
+.srv-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 500px;
+}
+
+.srv-badge {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 7px 13px;
+  border: 1px solid var(--faint);
+  color: var(--muted);
+  white-space: nowrap;
+  margin-top: 5px;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.srv-row:hover .srv-badge {
+  border-color: rgba(200, 137, 58, 0.3);
+  color: var(--amber);
+}

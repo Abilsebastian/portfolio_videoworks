@@ -1,0 +1,22 @@
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.linkedEditing": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "files.associations": {
+    "*.css": "css",
+    "*.js": "javascript",
+    "*.html": "html"
+  },
+  "emmet.includeLanguages": {
+    "html": "html"
+  },
+  "css.validate": true,
+  "html.validate.scripts": true,
+  "html.validate.styles": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.CustomBrowser": "chrome"
+}

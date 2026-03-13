@@ -1,0 +1,127 @@
+/* contact.css */
+#contact {
+  background: var(--bg-2);
+  border-top: 1px solid var(--faint);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Ambient glow */
+#contact::before {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 600px; height: 600px;
+  background: radial-gradient(ellipse, rgba(200, 137, 58, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 96px;
+  align-items: start;
+}
+
+.contact-heading {
+  font-family: var(--serif);
+  font-size: clamp(44px, 5.5vw, 80px);
+  font-weight: 400;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+}
+
+.contact-heading em {
+  font-style: italic;
+  color: rgba(200, 137, 58, 0.5);
+}
+
+.contact-sub {
+  font-size: 15px;
+  color: var(--muted);
+  margin-top: 24px;
+  line-height: 1.7;
+  font-weight: 300;
+  max-width: 400px;
+}
+
+/* Contact link list */
+.contact-links { margin-top: 52px; }
+
+.c-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+  border-top: 1px solid var(--faint);
+  transition: opacity 0.2s;
+}
+
+.c-link:last-child { border-bottom: 1px solid var(--faint); }
+.c-link:hover { opacity: 0.5; }
+
+.c-link-name { font-size: 13px; letter-spacing: 0.04em; }
+.c-link-val  { font-size: 12px; color: var(--muted); }
+.c-link-arr  { color: var(--amber); opacity: 0.5; font-size: 16px; }
+
+/* Form */
+.cform {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.fg {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.flabel {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.finput,
+.ftextarea {
+  background: rgba(240, 237, 230, 0.03);
+  border: 1px solid var(--faint);
+  color: var(--cream);
+  padding: 14px 16px;
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 300;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+
+.finput:focus,
+.ftextarea:focus { border-color: rgba(200, 137, 58, 0.4); }
+
+.finput::placeholder,
+.ftextarea::placeholder { color: rgba(120, 116, 104, 0.5); }
+
+.ftextarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.fsub {
+  background: var(--amber);
+  color: var(--bg);
+  border: none;
+  padding: 16px 32px;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 500;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: opacity 0.2s, background 0.2s;
+}
+
+.fsub:hover { background: var(--amber-2); }

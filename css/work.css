@@ -1,0 +1,215 @@
+/* work.css */
+#work {
+  background: var(--bg);
+  border-top: 1px solid var(--faint);
+  padding-bottom: 80px;
+}
+
+.work-top {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 52px;
+}
+
+.work-heading {
+  font-family: var(--serif);
+  font-size: clamp(38px, 4.5vw, 64px);
+  font-weight: 400;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+
+.work-heading em {
+  font-style: italic;
+  color: rgba(240, 237, 230, 0.4);
+}
+
+/* Filter buttons */
+.filters {
+  display: flex;
+  gap: 2px;
+}
+
+.fil {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  border: 1px solid var(--faint);
+  background: transparent;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-weight: 400;
+  transition: all 0.2s;
+}
+
+.fil.on,
+.fil:hover {
+  background: var(--amber);
+  color: var(--bg);
+  border-color: var(--amber);
+}
+
+/* ── Work grid ── */
+.wgrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--gap-grid);
+}
+
+/* Layout: asymmetric, mimics editorial magazine layout */
+.wi:nth-child(1) { grid-column: span 7; }
+.wi:nth-child(2) { grid-column: span 5; }
+.wi:nth-child(3) { grid-column: span 4; }
+.wi:nth-child(4) { grid-column: span 4; }
+.wi:nth-child(5) { grid-column: span 4; }
+.wi:nth-child(6) { grid-column: span 5; }
+.wi:nth-child(7) { grid-column: span 7; }
+
+/* Each item */
+.wi {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.wi-thumb {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+}
+
+/* Wider items get cinematic 16:9 */
+.wi:nth-child(1) .wi-thumb,
+.wi:nth-child(7) .wi-thumb { aspect-ratio: 16 / 9; }
+
+/* Portrait items */
+.wi:nth-child(2) .wi-thumb,
+.wi:nth-child(6) .wi-thumb { aspect-ratio: 4 / 5; }
+
+/* Thumbnail background — palette from Abil's IG posts */
+.wi-bg {
+  position: absolute;
+  inset: 0;
+  transition: transform 0.7s var(--ease-out);
+}
+
+.wi:hover .wi-bg { transform: scale(1.06); }
+
+/* Add thumbnail images when available */
+.wi-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease-out);
+  z-index: 1;
+}
+.wi:hover .wi-img { transform: scale(1.06); }
+
+/* Filmic colour grades — Morocco amber, blue-hour, forest, etc. */
+.wi-bg--1 { background: linear-gradient(170deg, #3d1a05 0%, #1a0d02 40%, #0b0a08 100%); }
+.wi-bg--2 { background: linear-gradient(160deg, #0a1520 0%, #0d2035 50%, #080e18 100%); }
+.wi-bg--3 { background: linear-gradient(150deg, #1a1206 0%, #2d1e07 50%, #0e0b04 100%); }
+.wi-bg--4 { background: linear-gradient(155deg, #102018 0%, #0a1810 50%, #060e0a 100%); }
+.wi-bg--5 { background: linear-gradient(165deg, #1a1008 0%, #150c06 50%, #0c0804 100%); }
+.wi-bg--6 { background: linear-gradient(160deg, #0a0f1a 0%, #0e1524 50%, #08090e 100%); }
+.wi-bg--7 { background: linear-gradient(155deg, #1c1005 0%, #2a1808 50%, #100904 100%); }
+
+/* Light leak for warm items */
+.wi-bg--1::after,
+.wi-bg--3::after,
+.wi-bg--7::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 60% 40% at 80% 70%, rgba(200, 100, 20, 0.2), transparent 60%);
+}
+
+/* Cool light leak for blue-hour items */
+.wi-bg--2::after,
+.wi-bg--6::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 50% 40% at 30% 30%, rgba(20, 60, 120, 0.2), transparent 60%);
+}
+
+/* Ambient frame number */
+.wi-frame {
+  position: absolute;
+  bottom: 14px;
+  left: 16px;
+  z-index: 2;
+  font-family: var(--serif);
+  font-size: 36px;
+  font-style: italic;
+  color: rgba(240, 237, 230, 0.07);
+  user-select: none;
+  pointer-events: none;
+  font-weight: 400;
+}
+
+/* Hover play overlay */
+.wi-hover {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: rgba(11, 10, 8, 0.2);
+}
+
+.wi:hover .wi-hover { opacity: 1; }
+
+.wi-play-btn {
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgba(200, 137, 58, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(11, 10, 8, 0.4);
+  backdrop-filter: blur(10px);
+  color: var(--cream);
+  transition: transform 0.2s;
+}
+
+.wi:hover .wi-play-btn { transform: scale(1.05); }
+.wi-play-btn svg { margin-left: 4px; }
+
+/* Item info bar */
+.wi-info {
+  padding: 14px 18px 18px;
+  background: var(--bg-2);
+  border-top: 1px solid var(--faint);
+}
+
+.wi-cat {
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+  opacity: 0.7;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+
+.wi-title {
+  font-family: var(--serif);
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--cream);
+}
+
+.wi-client {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 2px;
+}

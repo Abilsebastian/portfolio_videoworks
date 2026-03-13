@@ -1,0 +1,220 @@
+/* hero.css */
+#hero {
+  height: 100svh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Background layers */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, #1a1508 0%, #0b0a08 40%, #0d1218 100%);
+}
+
+.hero-glow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 40% at 75% 60%, rgba(180, 100, 20, 0.14) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 50% at 20% 30%, rgba(20, 40, 80, 0.18) 0%, transparent 60%);
+}
+
+/* Letterbox lines */
+.hero-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  opacity: 0.06;
+}
+
+.hero-lines::before,
+.hero-lines::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0;
+  height: 1px;
+  background: var(--cream);
+}
+
+.hero-lines::before { top: 6vh; }
+.hero-lines::after  { bottom: 6vh; }
+
+/* Video area */
+.hero-video-area {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-video-area iframe {
+  position: absolute;
+  top: 50%; left: 50%;
+  width: 177.78vh;
+  height: 100vh;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  border: 0;
+  opacity: 0.55;
+}
+
+/* Vignette */
+.hero-vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, rgba(11, 10, 8, 0.8) 100%),
+    linear-gradient(to top,    rgba(11, 10, 8, 1.0) 0%,  transparent 35%),
+    linear-gradient(to bottom, rgba(11, 10, 8, 0.6) 0%,  transparent 20%);
+}
+
+/* Poster / play trigger */
+.hero-poster {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  transition: opacity 0.6s ease;
+}
+
+.hero-poster.gone {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.play-ring {
+  width: 80px;
+  height: 80px;
+  border: 1px solid rgba(200, 137, 58, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(200, 137, 58, 0.06);
+  backdrop-filter: blur(6px);
+  color: var(--cream);
+  transition: transform 0.3s, border-color 0.3s, background 0.3s;
+}
+
+.hero-poster:hover .play-ring {
+  transform: scale(1.1);
+  border-color: var(--amber);
+  background: rgba(200, 137, 58, 0.12);
+}
+
+.play-ring svg { margin-left: 5px; }
+
+.play-label-outer {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(240, 237, 230, 0.35);
+  font-weight: 400;
+}
+
+/* Hero text */
+.hero-content {
+  position: relative;
+  z-index: 4;
+  padding: 0 var(--section-pad-x) 64px;
+}
+
+.hero-location {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--amber);
+  opacity: 0.8;
+  margin-bottom: 20px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-location::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--amber);
+  opacity: 0.5;
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(56px, 8.5vw, 112px);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: rgba(240, 237, 230, 0.45);
+}
+
+.hero-desc {
+  margin-top: 20px;
+  font-size: 14px;
+  color: var(--muted);
+  font-weight: 300;
+  letter-spacing: 0.04em;
+  max-width: 480px;
+  line-height: 1.5;
+}
+
+.hero-desc span { color: rgba(200, 137, 58, 0.7); }
+
+/* Scroll indicator */
+.hero-meta {
+  position: absolute;
+  bottom: 64px;
+  right: var(--section-pad-x);
+  z-index: 4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(240, 237, 230, 0.2);
+}
+
+.meta-line {
+  width: 1px;
+  height: 52px;
+  background: rgba(240, 237, 230, 0.1);
+  position: relative;
+  overflow: hidden;
+  align-self: flex-end;
+}
+
+.meta-line::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(200, 137, 58, 0.6);
+  animation: drip 2.2s ease-in-out infinite;
+}
+
+@keyframes drip {
+  0%   { top: -100%; }
+  100% { top: 100%; }
+}

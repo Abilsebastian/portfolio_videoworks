@@ -1,0 +1,27 @@
+/* variables.css — Design tokens */
+:root {
+  /* ── Colours ── */
+  --bg:        #0B0A08;
+  --bg-1:      #100F0C;
+  --bg-2:      #141310;
+  --bg-3:      #1C1A16;
+  --amber:     #C8893A;
+  --amber-2:   #E0A050;
+  --cream:     #F0EDE6;
+  --muted:     #7A7468;
+  --faint:     #2E2C28;
+  --border:    rgba(200, 137, 58, 0.15);
+
+  /* ── Typography ── */
+  --serif:  'Playfair Display', Georgia, serif;
+  --sans:   'Outfit', sans-serif;
+
+  /* ── Spacing ── */
+  --section-pad-y:  120px;
+  --section-pad-x:  52px;
+  --gap-grid:       3px;
+
+  /* ── Transitions ── */
+  --ease-out:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-in-out: cubic-bezier(0.45, 0, 0.55, 1);
+}
