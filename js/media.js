@@ -1,186 +1,119 @@
-// media.js - central media registry, rendering helpers, and shared placeholders
-
 const MEDIA_LIBRARY = {
   heroShowreel: {
-    title: 'Hero Showreel',
+    title: "Hero Showreel",
     sources: {
       hero: {
-        kind: 'video',
-        src: 'assets/media/waitisover_reel2_60fps.mp4',
-        poster: 'assets/images/hero/showreel-poster.jpg',
+        kind: "video",
+        src: "assets/media/waitisover_reel2_60fps.mp4",
         muted: true,
         loop: true,
         playsinline: true
       }
     },
     placeholder: {
-      eyebrow: 'Hero Video',
-      title: 'Drop your showreel on disk',
-      detail: 'assets/media/hero/showreel.mp4',
-      background: 'linear-gradient(160deg, #1a1508 0%, #0b0a08 40%, #0d1218 100%)'
+      eyebrow: "Hero Video",
+      title: "Showreel ready",
+      detail: "assets/media/waitisover_reel2_60fps.mp4",
+      background: "linear-gradient(160deg, #1a1508 0%, #0b0a08 40%, #0d1218 100%)"
     }
   },
   aboutPortrait: {
-    title: 'About Portrait',
+    title: "About Portrait",
     sources: {
       default: {
-        kind: 'image',
-        src: 'assets/images/ABPORTRAIT.jpg',
-        alt: 'Abil Sebastian portrait'
+        kind: "image",
+        src: "assets/images/ABPORTRAIT.jpg",
+        alt: "Abil Sebastian portrait"
       }
     },
     placeholder: {
-      eyebrow: 'Portrait',
-      title: 'Add your about photo',
-      detail: 'assets/images/abil-portrait.jpg',
-      background: 'linear-gradient(160deg, #191712 0%, #11100d 50%, #0b0a08 100%)'
+      eyebrow: "Portrait",
+      title: "About portrait",
+      detail: "assets/images/ABPORTRAIT.jpg",
+      background: "linear-gradient(160deg, #191712 0%, #11100d 50%, #0b0a08 100%)"
     }
   },
   work01: {
-    title: 'Not My Section - EP 01',
+    title: "Not My Section - EP 01",
     sources: {
       thumb: {
-        kind: 'image',
-        src: 'assets/images/work/not-my-section-ep01.jpg',
-        alt: 'Not My Section EP 01 thumbnail'
+        kind: "video",
+        src: "assets/media/works/ohhmybad.mp4",
+        muted: true,
+        loop: true,
+        playsinline: true
       },
       modal: {
-        kind: 'video',
-        src: 'assets/media/works/ohhmybad.mp4',
-        poster: 'assets/images/work/not-my-section-ep01.jpg'
+        kind: "video",
+        src: "assets/media/works/ohhmybad.mp4",
+        playsinline: true
       }
     },
     placeholder: {
-      eyebrow: 'Restaurant',
-      title: 'Not My Section - EP 01',
-      detail: 'assets/media/work/not-my-section-ep01.mp4',
-      background: 'linear-gradient(170deg, #3d1a05 0%, #1a0d02 40%, #0b0a08 100%)'
+      eyebrow: "Restaurant",
+      title: "Not My Section - EP 01",
+      detail: "assets/media/works/ohhmybad.mp4",
+      background: "linear-gradient(170deg, #3d1a05 0%, #1a0d02 40%, #0b0a08 100%)"
     }
   },
   work02: {
-    title: 'Brand Identity Reel',
-    sources: {
-      thumb: {
-        kind: 'image',
-        src: 'assets/images/work/brand-identity-reel.jpg',
-        alt: 'Brand Identity Reel thumbnail'
-      },
-      modal: {
-        kind: 'video',
-        src: 'assets/media/work/brand-identity-reel.mp4',
-        poster: 'assets/images/work/brand-identity-reel.jpg'
-      }
-    },
+    title: "Brand Identity Reel",
+    sources: {},
     placeholder: {
-      eyebrow: 'Brand',
-      title: 'Brand Identity Reel',
-      detail: 'assets/media/work/brand-identity-reel.mp4',
-      background: 'linear-gradient(160deg, #0a1520 0%, #0d2035 50%, #080e18 100%)'
+      eyebrow: "Brand",
+      title: "Brand Identity Reel",
+      detail: "Add a local media file in js/media.js",
+      background: "linear-gradient(160deg, #0a1520 0%, #0d2035 50%, #080e18 100%)"
     }
   },
   work03: {
-    title: 'Serenity',
-    sources: {
-      thumb: {
-        kind: 'image',
-        src: 'assets/images/work/serenity.jpg',
-        alt: 'Serenity short film thumbnail'
-      },
-      modal: {
-        kind: 'video',
-        src: 'assets/media/work/serenity.mp4',
-        poster: 'assets/images/work/serenity.jpg'
-      }
-    },
+    title: "Serenity",
+    sources: {},
     placeholder: {
-      eyebrow: 'Film',
-      title: 'Serenity',
-      detail: 'assets/media/work/serenity.mp4',
-      background: 'linear-gradient(150deg, #1a1206 0%, #2d1e07 50%, #0e0b04 100%)'
+      eyebrow: "Short Film",
+      title: "Serenity.",
+      detail: "Add a local media file in js/media.js",
+      background: "linear-gradient(150deg, #1a1206 0%, #2d1e07 50%, #0e0b04 100%)"
     }
   },
   work04: {
-    title: 'Atmosphere Series',
-    sources: {
-      thumb: {
-        kind: 'image',
-        src: 'assets/images/work/atmosphere-series.jpg',
-        alt: 'Atmosphere Series thumbnail'
-      },
-      modal: {
-        kind: 'video',
-        src: 'assets/media/work/atmosphere-series.mp4',
-        poster: 'assets/images/work/atmosphere-series.jpg'
-      }
-    },
+    title: "Atmosphere Series",
+    sources: {},
     placeholder: {
-      eyebrow: 'Restaurant',
-      title: 'Atmosphere Series',
-      detail: 'assets/media/work/atmosphere-series.mp4',
-      background: 'linear-gradient(155deg, #102018 0%, #0a1810 50%, #060e0a 100%)'
+      eyebrow: "Restaurant",
+      title: "Atmosphere Series",
+      detail: "Add a local media file in js/media.js",
+      background: "linear-gradient(155deg, #102018 0%, #0a1810 50%, #060e0a 100%)"
     }
   },
   work05: {
-    title: 'Product Launch Reel',
-    sources: {
-      thumb: {
-        kind: 'image',
-        src: 'assets/images/work/product-launch-reel.jpg',
-        alt: 'Product Launch Reel thumbnail'
-      },
-      modal: {
-        kind: 'video',
-        src: 'assets/media/work/product-launch-reel.mp4',
-        poster: 'assets/images/work/product-launch-reel.jpg'
-      }
-    },
+    title: "Product Launch Reel",
+    sources: {},
     placeholder: {
-      eyebrow: 'Brand',
-      title: 'Product Launch Reel',
-      detail: 'assets/media/work/product-launch-reel.mp4',
-      background: 'linear-gradient(165deg, #1a1008 0%, #150c06 50%, #0c0804 100%)'
+      eyebrow: "Brand",
+      title: "Product Launch Reel",
+      detail: "Add a local media file in js/media.js",
+      background: "linear-gradient(165deg, #1a1008 0%, #150c06 50%, #0c0804 100%)"
     }
   },
   work06: {
-    title: 'Roads & Horizons',
-    sources: {
-      thumb: {
-        kind: 'image',
-        src: 'assets/images/work/roads-and-horizons.jpg',
-        alt: 'Roads and Horizons thumbnail'
-      },
-      modal: {
-        kind: 'video',
-        src: 'assets/media/work/roads-and-horizons.mp4',
-        poster: 'assets/images/work/roads-and-horizons.jpg'
-      }
-    },
+    title: "Roads & Horizons",
+    sources: {},
     placeholder: {
-      eyebrow: 'Travel',
-      title: 'Roads & Horizons',
-      detail: 'assets/media/work/roads-and-horizons.mp4',
-      background: 'linear-gradient(160deg, #0a0f1a 0%, #0e1524 50%, #08090e 100%)'
+      eyebrow: "Travel",
+      title: "Roads & Horizons",
+      detail: "Add a local media file in js/media.js",
+      background: "linear-gradient(160deg, #0a0f1a 0%, #0e1524 50%, #08090e 100%)"
     }
   },
   work07: {
-    title: 'Behind the Section',
-    sources: {
-      thumb: {
-        kind: 'image',
-        src: 'assets/images/work/behind-the-section.jpg',
-        alt: 'Behind the Section thumbnail'
-      },
-      modal: {
-        kind: 'video',
-        src: 'assets/media/work/behind-the-section.mp4',
-        poster: 'assets/images/work/behind-the-section.jpg'
-      }
-    },
+    title: "Behind the Section",
+    sources: {},
     placeholder: {
-      eyebrow: 'Behind The Scenes',
-      title: 'Behind the Section',
-      detail: 'assets/media/work/behind-the-section.mp4',
-      background: 'linear-gradient(155deg, #1c1005 0%, #2a1808 50%, #100904 100%)'
+      eyebrow: "Behind The Scenes",
+      title: "Behind the Section",
+      detail: "Add a local media file in js/media.js",
+      background: "linear-gradient(155deg, #1c1005 0%, #2a1808 50%, #100904 100%)"
     }
   }
 };
@@ -189,9 +122,11 @@ function getMediaEntry(key) {
   return MEDIA_LIBRARY[key] || null;
 }
 
-function getMediaSource(key, variant = 'default') {
+function getMediaSource(key, variant = "default") {
   const entry = getMediaEntry(key);
-  if (!entry || !entry.sources) return null;
+  if (!entry || !entry.sources) {
+    return null;
+  }
 
   return (
     entry.sources[variant] ||
@@ -203,43 +138,45 @@ function getMediaSource(key, variant = 'default') {
   );
 }
 
-function hasMediaSource(key, variant = 'default') {
+function hasMediaSource(key, variant = "default") {
   const source = getMediaSource(key, variant);
   return Boolean(source && source.src);
 }
 
 function createMediaNode(source, options = {}) {
-  if (!source || !source.src) return null;
+  if (!source || !source.src) {
+    return null;
+  }
 
-  if (source.kind === 'image') {
-    const image = document.createElement('img');
+  if (source.kind === "image") {
+    const image = document.createElement("img");
     image.src = source.src;
-    image.alt = source.alt || '';
-    image.loading = options.loading || 'lazy';
-    image.decoding = 'async';
-    image.className = 'media-node media-node--image';
+    image.alt = source.alt || "";
+    image.loading = options.loading || "lazy";
+    image.decoding = "async";
+    image.className = "media-node media-node--image";
     return image;
   }
 
-  if (source.kind === 'embed') {
-    const frame = document.createElement('iframe');
+  if (source.kind === "embed") {
+    const frame = document.createElement("iframe");
     frame.src = source.src;
-    frame.allow = source.allow || 'autoplay; fullscreen';
+    frame.allow = source.allow || "autoplay; fullscreen";
     frame.allowFullscreen = true;
-    frame.setAttribute('frameborder', '0');
-    frame.className = 'media-node media-node--embed';
+    frame.setAttribute("frameborder", "0");
+    frame.className = "media-node media-node--embed";
     return frame;
   }
 
-  if (source.kind === 'video') {
-    const video = document.createElement('video');
+  if (source.kind === "video") {
+    const video = document.createElement("video");
     video.src = source.src;
-    video.className = 'media-node media-node--video';
+    video.className = "media-node media-node--video";
     video.playsInline = options.playsinline ?? source.playsinline ?? true;
     video.loop = options.loop ?? source.loop ?? false;
     video.muted = options.muted ?? source.muted ?? false;
     video.controls = options.controls ?? source.controls ?? false;
-    video.preload = options.preload || source.preload || 'metadata';
+    video.preload = options.preload || source.preload || "metadata";
 
     if (source.poster) {
       video.poster = source.poster;
@@ -247,7 +184,7 @@ function createMediaNode(source, options = {}) {
 
     if (options.autoplay ?? source.autoplay ?? false) {
       video.autoplay = true;
-      video.muted = true;
+      video.muted = options.muted ?? source.muted ?? true;
     }
 
     return video;
@@ -256,60 +193,100 @@ function createMediaNode(source, options = {}) {
   return null;
 }
 
-function createPlaceholder(key, variant = 'default') {
+function createPlaceholder(key, variant = "default") {
   const entry = getMediaEntry(key);
   const placeholder = entry && entry.placeholder ? entry.placeholder : {};
-  const shell = document.createElement('div');
+  const shell = document.createElement("div");
+  const detailText = placeholder.detail || "Add a local file path in js/media.js";
 
-  shell.className = 'media-placeholder';
-  shell.style.setProperty('--media-placeholder-bg', placeholder.background || 'linear-gradient(160deg, #181512 0%, #11100d 60%, #090807 100%)');
+  shell.className = "media-placeholder";
+  shell.style.setProperty(
+    "--media-placeholder-bg",
+    placeholder.background || "linear-gradient(160deg, #181512 0%, #11100d 60%, #090807 100%)"
+  );
 
-  const eyebrow = document.createElement('span');
-  eyebrow.className = 'media-placeholder-eyebrow';
+  const eyebrow = document.createElement("span");
+  eyebrow.className = "media-placeholder-eyebrow";
   eyebrow.textContent = placeholder.eyebrow || variant;
 
-  const title = document.createElement('strong');
-  title.className = 'media-placeholder-title';
-  title.textContent = placeholder.title || (entry ? entry.title : 'Media placeholder');
+  const title = document.createElement("strong");
+  title.className = "media-placeholder-title";
+  title.textContent = placeholder.title || (entry ? entry.title : "Media placeholder");
 
-  const detail = document.createElement('span');
-  detail.className = 'media-placeholder-detail';
-  detail.textContent = placeholder.detail || 'Add a local file path in js/media.js';
+  const detail = document.createElement("span");
+  detail.className = "media-placeholder-detail";
+  detail.textContent = detailText;
 
   shell.append(eyebrow, title, detail);
   return shell;
 }
 
-function renderMediaSlot(slot, key, variant = 'default', options = {}) {
-  if (!slot) return null;
+function toBooleanFlag(value) {
+  if (value === "true") {
+    return true;
+  }
+
+  if (value === "false") {
+    return false;
+  }
+
+  return undefined;
+}
+
+function getSlotOptions(slot) {
+  return {
+    autoplay: toBooleanFlag(slot.dataset.mediaAutoplay),
+    controls: toBooleanFlag(slot.dataset.mediaControls),
+    loop: toBooleanFlag(slot.dataset.mediaLoop),
+    muted: toBooleanFlag(slot.dataset.mediaMuted),
+    playsinline: toBooleanFlag(slot.dataset.mediaPlaysinline),
+    preload: slot.dataset.mediaPreload || undefined
+  };
+}
+
+function showPlaceholder(slot, mediaKey, mediaVariant) {
+  slot.replaceChildren(createPlaceholder(mediaKey, mediaVariant));
+  slot.dataset.mediaState = "placeholder";
+  return null;
+}
+
+function renderMediaSlot(slot, key, variant = "default", options = {}) {
+  if (!slot) {
+    return null;
+  }
 
   const mediaKey = key || slot.dataset.mediaKey;
-  const mediaVariant = variant || slot.dataset.mediaVariant || 'default';
+  const mediaVariant = variant || slot.dataset.mediaVariant || "default";
   const source = getMediaSource(mediaKey, mediaVariant);
 
   slot.replaceChildren();
 
   if (!source || !source.src) {
-    slot.appendChild(createPlaceholder(mediaKey, mediaVariant));
-    slot.dataset.mediaState = 'placeholder';
-    return null;
+    return showPlaceholder(slot, mediaKey, mediaVariant);
   }
 
-  const node = createMediaNode(source, options);
+  const node = createMediaNode(source, { ...getSlotOptions(slot), ...options });
 
   if (!node) {
-    slot.appendChild(createPlaceholder(mediaKey, mediaVariant));
-    slot.dataset.mediaState = 'placeholder';
-    return null;
+    return showPlaceholder(slot, mediaKey, mediaVariant);
   }
 
+  const fallback = () => {
+    showPlaceholder(slot, mediaKey, mediaVariant);
+  };
+
+  node.addEventListener("error", fallback, { once: true });
   slot.appendChild(node);
-  slot.dataset.mediaState = 'ready';
+  slot.dataset.mediaState = "ready";
   return node;
 }
 
 function renderAllMediaSlots() {
-  document.querySelectorAll('[data-media-slot]').forEach((slot) => {
+  document.querySelectorAll("[data-media-slot]").forEach((slot) => {
+    if (slot.dataset.mediaLazy === "true") {
+      return;
+    }
+
     renderMediaSlot(slot, slot.dataset.mediaKey, slot.dataset.mediaVariant);
   });
 }

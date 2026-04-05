@@ -1,27 +1,97 @@
-// work.js — Filter buttons + click-to-open modal
+const workCards = [...document.querySelectorAll(".wcard")];
+const workPin = document.getElementById("workPin");
+const workRail = document.getElementById("workRail");
+const workProgressBar = document.getElementById("workProgressBar");
+let horizontalTween = null;
 
-const filterBtns = document.querySelectorAll('.fil');
-const workItems  = document.querySelectorAll('.wi');
+function openWorkCard(card) {
+  if (!card || !window.Modal) {
+    return;
+  }
 
-filterBtns.forEach((btn) => {
-  btn.addEventListener('click', () => {
-    // Update active state
-    filterBtns.forEach(b => b.classList.remove('on'));
-    btn.classList.add('on');
+  window.Modal.openByKey(card.dataset.mediaKey);
+}
 
-    const cat = btn.dataset.filter;
+workCards.forEach((card) => {
+  card.addEventListener("click", () => {
+    openWorkCard(card);
+  });
 
-    workItems.forEach((item) => {
-      const show = cat === 'all' || item.dataset.cat === cat;
-      item.style.display = show ? '' : 'none';
-    });
+  card.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") {
+      return;
+    }
+
+    event.preventDefault();
+    openWorkCard(card);
   });
 });
 
-// Open modal on work item click
-workItems.forEach((item) => {
-  item.addEventListener('click', () => {
-    const videoUrl = item.dataset.video;
-    if (videoUrl) openModal(videoUrl);
+function destroyHorizontalWork() {
+  if (horizontalTween) {
+    if (horizontalTween.scrollTrigger) {
+      horizontalTween.scrollTrigger.kill();
+    }
+
+    horizontalTween.kill();
+    horizontalTween = null;
+  }
+
+  if (workRail) {
+    workRail.style.transform = "";
+  }
+
+  if (workProgressBar) {
+    workProgressBar.style.width = "0%";
+  }
+}
+
+function initHorizontalWork() {
+  if (!workPin || !workRail || !window.gsap || !window.ScrollTrigger) {
+    return;
+  }
+
+  destroyHorizontalWork();
+
+  if (window.innerWidth <= 900) {
+    return;
+  }
+
+  const scrollAmount = Math.max(workRail.scrollWidth - workPin.clientWidth, 0);
+
+  if (scrollAmount <= 0) {
+    return;
+  }
+
+  horizontalTween = window.gsap.to(workRail, {
+    x: -scrollAmount,
+    ease: "none",
+    scrollTrigger: {
+      trigger: workPin,
+      pin: true,
+      scrub: 1.1,
+      start: "top top",
+      end: () => "+=" + scrollAmount,
+      invalidateOnRefresh: true,
+      onUpdate: (self) => {
+        if (workProgressBar) {
+          workProgressBar.style.width = self.progress * 100 + "%";
+        }
+      }
+    }
   });
+
+  if (window.SiteRuntime && typeof window.SiteRuntime.refreshScroll === "function") {
+    window.SiteRuntime.refreshScroll();
+  }
+}
+
+let resizeTimer = null;
+
+window.addEventListener("resize", () => {
+  window.clearTimeout(resizeTimer);
+  resizeTimer = window.setTimeout(initHorizontalWork, 150);
 });
+
+window.addEventListener("load", initHorizontalWork);
+initHorizontalWork();

@@ -1,74 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Abil Sebastian — Filmmaker & Content Creator. Founder of draftClub Studios, Riga Latvia."/>
-  <title>Abil Sebastian — Filmmaker</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Abil Sebastian - Filmmaker and content creator based in Riga, Latvia. Founder of draftClub Studios."
+  />
+  <meta name="theme-color" content="#0B0A08" />
+  <title>Abil Sebastian - Filmmaker</title>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Outfit:wght@200;300;400;500&display=swap"
+    rel="stylesheet"
+  />
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="css/reset.css"/>
-  <link rel="stylesheet" href="css/variables.css"/>
-  <link rel="stylesheet" href="css/base.css"/>
-  <link rel="stylesheet" href="css/nav.css"/>
-  <link rel="stylesheet" href="css/hero.css"/>
-  <link rel="stylesheet" href="css/about.css"/>
-  <link rel="stylesheet" href="css/work.css"/>
-  <link rel="stylesheet" href="css/services.css"/>
-  <link rel="stylesheet" href="css/contact.css"/>
-  <link rel="stylesheet" href="css/modal.css"/>
-  <link rel="stylesheet" href="css/animations.css"/>
-  <link rel="stylesheet" href="css/responsive.css"/>
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/site.css" />
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+
+  <script src="js/media.js" defer></script>
+  <script src="js/cursor.js" defer></script>
+  <script src="js/nav.js" defer></script>
+  <script src="js/reveal.js" defer></script>
+  <script src="js/hero.js" defer></script>
+  <script src="js/work.js" defer></script>
+  <script src="js/modal.js" defer></script>
+  <script src="js/contact.js" defer></script>
 </head>
 <body>
-
-  <!-- Custom cursor -->
-  <div id="cur"></div>
+  <div id="cur"><span id="cur-label">VIEW</span></div>
   <div id="cur-r"></div>
 
-  <!-- ── NAV ── -->
   <nav id="nav">
     <a href="#hero" class="nav-brand">
       <span class="nav-brand-name">Abil Sebastian</span>
       <span class="nav-brand-sub">draftClub Studios</span>
     </a>
+
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#work">Work</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="#contact" class="nav-cta">Let's talk</a>
+
+    <a href="#contact" class="nav-cta magnetic">Let's talk</a>
   </nav>
 
-  <!-- ── HERO ── -->
   <section id="hero">
     <div class="hero-bg"></div>
     <div class="hero-glow"></div>
     <div class="hero-lines"></div>
-    <div class="hero-video-area media-slot" id="heroVid" data-media-slot data-media-key="heroShowreel" data-media-variant="hero"></div>
+    <div
+      class="hero-video-area media-slot"
+      id="heroVid"
+      data-media-slot
+      data-media-key="heroShowreel"
+      data-media-variant="hero"
+      data-media-lazy="true"
+    ></div>
     <div class="hero-vignette"></div>
 
-    <div class="hero-poster" id="heroPoster" role="button" tabindex="0" aria-label="Play showreel">
+    <div
+      class="hero-poster"
+      id="heroPoster"
+      role="button"
+      tabindex="0"
+      aria-controls="heroVid"
+      aria-label="Play showreel"
+      data-view-cursor
+    >
       <div class="play-ring">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <polygon points="5,3 19,12 5,21"/>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <polygon points="5,3 19,12 5,21"></polygon>
         </svg>
       </div>
       <span class="play-label-outer">Play Showreel</span>
     </div>
 
-    <div class="hero-content">
-      <p class="hero-location">Riga, Latvia &nbsp;·&nbsp; Filmmaker</p>
-      <h1 class="hero-title">Abil<br/><em>Sebastian</em></h1>
-      <p class="hero-desc">
-        Founder of <span>draftClub Studios</span> — short-form video for brands,<br/>
-        restaurants &amp; stories worth telling.
+    <div class="hero-content" id="heroContent">
+      <p class="hero-location" id="heroLoc">Riga, Latvia &nbsp;&middot;&nbsp; Filmmaker</p>
+      <h1 class="hero-title" id="heroTitle">Abil<br /><em>Sebastian</em></h1>
+      <p class="hero-desc" id="heroDesc">
+        Founder of <span>draftClub Studios</span> - short-form video for brands,
+        restaurants, and stories worth telling.
       </p>
     </div>
 
@@ -78,37 +99,46 @@
     </div>
   </section>
 
-  <!-- ── ABOUT ── -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-inner">
+      <span>Filmmaker &nbsp;<em>&middot;</em>&nbsp; draftClub Studios &nbsp;<em>&middot;</em>&nbsp; Riga, Latvia &nbsp;<em>&middot;</em>&nbsp; Short-form Video &nbsp;<em>&middot;</em>&nbsp; Content Strategy &nbsp;<em>&middot;</em>&nbsp; Color Grading &nbsp;<em>&middot;</em>&nbsp; Narrative Film &nbsp;<em>&middot;</em>&nbsp; Restaurant Content &nbsp;<em>&middot;</em>&nbsp; Social Media &nbsp;<em>&middot;</em>&nbsp; DaVinci Resolve &nbsp;<em>&middot;</em>&nbsp;</span>
+      <span>Filmmaker &nbsp;<em>&middot;</em>&nbsp; draftClub Studios &nbsp;<em>&middot;</em>&nbsp; Riga, Latvia &nbsp;<em>&middot;</em>&nbsp; Short-form Video &nbsp;<em>&middot;</em>&nbsp; Content Strategy &nbsp;<em>&middot;</em>&nbsp; Color Grading &nbsp;<em>&middot;</em>&nbsp; Narrative Film &nbsp;<em>&middot;</em>&nbsp; Restaurant Content &nbsp;<em>&middot;</em>&nbsp; Social Media &nbsp;<em>&middot;</em>&nbsp; DaVinci Resolve &nbsp;<em>&middot;</em>&nbsp;</span>
+    </div>
+  </div>
+
   <section id="about">
     <p class="sec-label" data-r>About</p>
     <div class="about-wrap">
       <div class="about-img" data-r>
         <div class="media-slot about-media" data-media-slot data-media-key="aboutPortrait"></div>
       </div>
+
       <div class="about-right">
-        <h2 class="about-heading" data-r>A filmmaker's<br/>eye for <em>every<br/>frame</em></h2>
-        <blockquote class="about-quote" data-r>"Life hard, but i go harder."</blockquote>
+        <h2 class="about-heading" data-r>A filmmaker's<br />eye for <em>every<br />frame</em></h2>
+        <blockquote class="about-quote" data-r>"Life hard, but I go harder."</blockquote>
         <p class="about-bio" data-r>
-          I'm a filmmaker and content creator based in <strong>Riga, Latvia</strong>, and founder of
-          <strong>draftClub Studios</strong> — a production studio focused on short-form video for
-          restaurants, local businesses, and brands building a presence online.
+          I'm a filmmaker and content creator based in <strong>Riga, Latvia</strong>,
+          and founder of <strong>draftClub Studios</strong> - a production studio focused
+          on short-form video for restaurants, local businesses, and brands building a
+          presence online.
         </p>
         <p class="about-bio" data-r>
-          My work is shaped by years of travelling with a camera across <strong>Morocco, Ireland,
-          France, Spain, and beyond</strong> — learning how light, composition, and timing make a
-          story land. That same instinct goes into every client reel I shoot.
+          My work is shaped by years of traveling with a camera across
+          <strong>Morocco, Ireland, France, Spain, and beyond</strong> - learning how
+          light, composition, and timing make a story land. That same instinct goes into
+          every client reel I shoot.
         </p>
         <div class="about-stats" data-r>
           <div class="stat">
-            <div class="stat-n">3+</div>
+            <div class="stat-n" data-count="3" data-suffix="+">3+</div>
             <div class="stat-l">Years creating</div>
           </div>
           <div class="stat">
-            <div class="stat-n">20+</div>
+            <div class="stat-n" data-count="20" data-suffix="+">20+</div>
             <div class="stat-l">Brands served</div>
           </div>
           <div class="stat">
-            <div class="stat-n">41</div>
+            <div class="stat-n" data-count="41">41</div>
             <div class="stat-l">Posts, counting</div>
           </div>
         </div>
@@ -116,280 +146,352 @@
     </div>
   </section>
 
-  <!-- ── WORK ── -->
   <section id="work">
-    <div class="work-top">
-      <h2 class="work-heading" data-r>Selected<br/><em>Work</em></h2>
-      <div class="filters">
-        <button class="fil on" data-filter="all">All</button>
-        <button class="fil" data-filter="restaurant">Restaurant</button>
-        <button class="fil" data-filter="brand">Brand</button>
-        <button class="fil" data-filter="film">Film</button>
-      </div>
+    <div class="work-top" data-r>
+      <h2 class="work-heading">Selected<br /><em>Work</em></h2>
+      <div class="work-count">07 films</div>
     </div>
 
-    <div class="wgrid" id="wgrid">
-
-      <!-- Work Item 1 — REPLACE video URL with your actual embed link -->
-      <div class="wi" data-cat="restaurant" data-r data-media-key="work01">
-        <div class="wi-thumb">
-          <div class="media-slot wi-media" data-media-slot data-media-key="work01" data-media-variant="thumb"></div>
-          <div class="wi-frame">01</div>
-          <div class="wi-hover">
-            <div class="wi-play-btn">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+    <div class="work-pin" id="workPin">
+      <div class="work-rail" id="workRail">
+        <article
+          class="wcard"
+          data-media-key="work01"
+          tabindex="0"
+          role="button"
+          aria-label="Open Not My Section - EP 01"
+          data-view-cursor
+        >
+          <div class="wcard-thumb">
+            <div
+              class="media-slot wcard-media"
+              data-media-slot
+              data-media-key="work01"
+              data-media-variant="thumb"
+              data-media-autoplay="true"
+              data-media-loop="true"
+              data-media-muted="true"
+              data-media-playsinline="true"
+            ></div>
+            <div class="wcard-frame">01</div>
+            <div class="wcard-hover">
+              <div class="wi-play-btn" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5,3 19,12 5,21"></polygon>
+                </svg>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="wi-info">
-          <div class="wi-cat">Restaurant · Split-screen</div>
-          <div class="wi-title">Not My Section — EP 01</div>
-          <div class="wi-client">Vapiano Latvia</div>
-        </div>
-      </div>
+          <div class="wcard-info">
+            <div class="wi-cat">Restaurant - Split-screen</div>
+            <div class="wi-title">Not My Section - EP 01</div>
+            <div class="wi-client">Vapiano Latvia</div>
+          </div>
+        </article>
 
-      <!-- Work Item 2 -->
-      <div class="wi" data-cat="brand" data-r data-media-key="work02">
-        <div class="wi-thumb">
-          <div class="media-slot wi-media" data-media-slot data-media-key="work02" data-media-variant="thumb"></div>
-          <div class="wi-frame">02</div>
-          <div class="wi-hover">
-            <div class="wi-play-btn">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+        <article
+          class="wcard"
+          data-media-key="work02"
+          tabindex="0"
+          role="button"
+          aria-label="Open Brand Identity Reel"
+          data-view-cursor
+        >
+          <div class="wcard-thumb">
+            <div class="media-slot wcard-media" data-media-slot data-media-key="work02" data-media-variant="thumb"></div>
+            <div class="wcard-frame">02</div>
+            <div class="wcard-hover">
+              <div class="wi-play-btn" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5,3 19,12 5,21"></polygon>
+                </svg>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="wi-info">
-          <div class="wi-cat">Brand · Identity</div>
-          <div class="wi-title">Brand Identity Reel</div>
-          <div class="wi-client">draftClub Studios</div>
-        </div>
-      </div>
+          <div class="wcard-info">
+            <div class="wi-cat">Brand - Identity</div>
+            <div class="wi-title">Brand Identity Reel</div>
+            <div class="wi-client">draftClub Studios</div>
+          </div>
+        </article>
 
-      <!-- Work Item 3 -->
-      <div class="wi" data-cat="film" data-r data-media-key="work03">
-        <div class="wi-thumb">
-          <div class="media-slot wi-media" data-media-slot data-media-key="work03" data-media-variant="thumb"></div>
-          <div class="wi-frame">03</div>
-          <div class="wi-hover">
-            <div class="wi-play-btn">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+        <article
+          class="wcard"
+          data-media-key="work03"
+          tabindex="0"
+          role="button"
+          aria-label="Open Serenity"
+          data-view-cursor
+        >
+          <div class="wcard-thumb">
+            <div class="media-slot wcard-media" data-media-slot data-media-key="work03" data-media-variant="thumb"></div>
+            <div class="wcard-frame">03</div>
+            <div class="wcard-hover">
+              <div class="wi-play-btn" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5,3 19,12 5,21"></polygon>
+                </svg>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="wi-info">
-          <div class="wi-cat">Short Film</div>
-          <div class="wi-title">Serenity.</div>
-          <div class="wi-client">Personal Work</div>
-        </div>
-      </div>
+          <div class="wcard-info">
+            <div class="wi-cat">Short Film</div>
+            <div class="wi-title">Serenity.</div>
+            <div class="wi-client">Personal Work</div>
+          </div>
+        </article>
 
-      <!-- Work Item 4 -->
-      <div class="wi" data-cat="restaurant" data-r data-media-key="work04">
-        <div class="wi-thumb">
-          <div class="media-slot wi-media" data-media-slot data-media-key="work04" data-media-variant="thumb"></div>
-          <div class="wi-frame">04</div>
-          <div class="wi-hover">
-            <div class="wi-play-btn">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+        <article
+          class="wcard"
+          data-media-key="work04"
+          tabindex="0"
+          role="button"
+          aria-label="Open Atmosphere Series"
+          data-view-cursor
+        >
+          <div class="wcard-thumb">
+            <div class="media-slot wcard-media" data-media-slot data-media-key="work04" data-media-variant="thumb"></div>
+            <div class="wcard-frame">04</div>
+            <div class="wcard-hover">
+              <div class="wi-play-btn" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5,3 19,12 5,21"></polygon>
+                </svg>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="wi-info">
-          <div class="wi-cat">Restaurant · Social</div>
-          <div class="wi-title">Atmosphere Series</div>
-          <div class="wi-client">Casa Nostra Riga</div>
-        </div>
-      </div>
+          <div class="wcard-info">
+            <div class="wi-cat">Restaurant - Social</div>
+            <div class="wi-title">Atmosphere Series</div>
+            <div class="wi-client">Casa Nostra Riga</div>
+          </div>
+        </article>
 
-      <!-- Work Item 5 -->
-      <div class="wi" data-cat="brand" data-r data-media-key="work05">
-        <div class="wi-thumb">
-          <div class="media-slot wi-media" data-media-slot data-media-key="work05" data-media-variant="thumb"></div>
-          <div class="wi-frame">05</div>
-          <div class="wi-hover">
-            <div class="wi-play-btn">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+        <article
+          class="wcard"
+          data-media-key="work05"
+          tabindex="0"
+          role="button"
+          aria-label="Open Product Launch Reel"
+          data-view-cursor
+        >
+          <div class="wcard-thumb">
+            <div class="media-slot wcard-media" data-media-slot data-media-key="work05" data-media-variant="thumb"></div>
+            <div class="wcard-frame">05</div>
+            <div class="wcard-hover">
+              <div class="wi-play-btn" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5,3 19,12 5,21"></polygon>
+                </svg>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="wi-info">
-          <div class="wi-cat">Brand · Product</div>
-          <div class="wi-title">Product Launch Reel</div>
-          <div class="wi-client">Riga Brand</div>
-        </div>
-      </div>
+          <div class="wcard-info">
+            <div class="wi-cat">Brand - Product</div>
+            <div class="wi-title">Product Launch Reel</div>
+            <div class="wi-client">Riga Brand</div>
+          </div>
+        </article>
 
-      <!-- Work Item 6 -->
-      <div class="wi" data-cat="film" data-r data-media-key="work06">
-        <div class="wi-thumb">
-          <div class="media-slot wi-media" data-media-slot data-media-key="work06" data-media-variant="thumb"></div>
-          <div class="wi-frame">06</div>
-          <div class="wi-hover">
-            <div class="wi-play-btn">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+        <article
+          class="wcard"
+          data-media-key="work06"
+          tabindex="0"
+          role="button"
+          aria-label="Open Roads and Horizons"
+          data-view-cursor
+        >
+          <div class="wcard-thumb">
+            <div class="media-slot wcard-media" data-media-slot data-media-key="work06" data-media-variant="thumb"></div>
+            <div class="wcard-frame">06</div>
+            <div class="wcard-hover">
+              <div class="wi-play-btn" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5,3 19,12 5,21"></polygon>
+                </svg>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="wi-info">
-          <div class="wi-cat">Cinematic · Travel</div>
-          <div class="wi-title">Roads &amp; Horizons</div>
-          <div class="wi-client">Personal Work</div>
-        </div>
-      </div>
+          <div class="wcard-info">
+            <div class="wi-cat">Cinematic - Travel</div>
+            <div class="wi-title">Roads &amp; Horizons</div>
+            <div class="wi-client">Personal Work</div>
+          </div>
+        </article>
 
-      <!-- Work Item 7 -->
-      <div class="wi" data-cat="restaurant" data-r data-media-key="work07">
-        <div class="wi-thumb">
-          <div class="media-slot wi-media" data-media-slot data-media-key="work07" data-media-variant="thumb"></div>
-          <div class="wi-frame">07</div>
-          <div class="wi-hover">
-            <div class="wi-play-btn">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><polygon points="5,3 19,12 5,21"/></svg>
+        <article
+          class="wcard"
+          data-media-key="work07"
+          tabindex="0"
+          role="button"
+          aria-label="Open Behind the Section"
+          data-view-cursor
+        >
+          <div class="wcard-thumb">
+            <div class="media-slot wcard-media" data-media-slot data-media-key="work07" data-media-variant="thumb"></div>
+            <div class="wcard-frame">07</div>
+            <div class="wcard-hover">
+              <div class="wi-play-btn" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                  <polygon points="5,3 19,12 5,21"></polygon>
+                </svg>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="wi-info">
-          <div class="wi-cat">BTS · Social</div>
-          <div class="wi-title">Behind the Section</div>
-          <div class="wi-client">Vapiano Latvia</div>
-        </div>
+          <div class="wcard-info">
+            <div class="wi-cat">BTS - Social</div>
+            <div class="wi-title">Behind the Section</div>
+            <div class="wi-client">Vapiano Latvia</div>
+          </div>
+        </article>
       </div>
 
+      <div class="work-progress-wrap">
+        <div class="work-progress-bar" id="workProgressBar"></div>
+      </div>
+
+      <div class="work-drag-hint">Scroll to explore</div>
     </div>
   </section>
 
-  <!-- ── VIDEO MODAL ── -->
-  <div id="modal">
+  <div id="modal" aria-hidden="true">
     <div class="modal-box">
-      <button class="modal-x" id="modalClose">
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-          <line x1="18" y1="6" x2="6" y2="18"/>
-          <line x1="6" y1="6" x2="18" y2="18"/>
+      <button class="modal-x" id="modalClose" type="button" aria-label="Close media modal">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
         </svg>
         Close
       </button>
-      <div class="modal-media-wrap" id="modalMedia">
-      </div>
+      <div class="modal-media-wrap" id="modalMedia"></div>
     </div>
   </div>
 
-  <!-- ── SERVICES ── -->
   <section id="services">
     <p class="sec-label" data-r>Services</p>
     <div class="srv-top">
-      <h2 class="srv-heading" data-r>Full-service<br/>video <em>production</em></h2>
+      <h2 class="srv-heading" data-r>Full-service<br />video <em>production</em></h2>
       <p class="srv-sub" data-r>
-        From concept to final cut — I handle everything. Whether you need a
+        From concept to final cut - I handle everything. Whether you need a
         <strong>monthly content retainer</strong> or a one-off cinematic reel,
         draftClub delivers work that performs.
       </p>
     </div>
+
     <div class="srv-rows">
       <div class="srv-row" data-r>
         <div class="srv-n">01.</div>
         <div class="srv-body">
           <div class="srv-name">Social Content Retainer</div>
-          <div class="srv-desc">Monthly short-form video packages for Instagram and TikTok. Consistent output, consistent quality — designed around your brand, your audience, your voice.</div>
+          <div class="srv-desc">
+            Monthly short-form video packages for Instagram and TikTok. Consistent output,
+            consistent quality - designed around your brand, your audience, your voice.
+          </div>
         </div>
         <div class="srv-badge">Monthly</div>
       </div>
+
       <div class="srv-row" data-r>
         <div class="srv-n">02.</div>
         <div class="srv-body">
           <div class="srv-name">Brand Reels &amp; Showreels</div>
-          <div class="srv-desc">High-impact single reels that capture the essence of your brand. Shot and edited for maximum watchtime — from food films to product launches.</div>
+          <div class="srv-desc">
+            High-impact single reels that capture the essence of your brand. Shot and
+            edited for maximum watch time - from food films to product launches.
+          </div>
         </div>
         <div class="srv-badge">Project</div>
       </div>
+
       <div class="srv-row" data-r>
         <div class="srv-n">03.</div>
         <div class="srv-body">
           <div class="srv-name">Short Film &amp; Narrative</div>
-          <div class="srv-desc">Scripted and documentary-style short films. Storytelling-first productions for brands that want to say something that lasts longer than a scroll.</div>
+          <div class="srv-desc">
+            Scripted and documentary-style short films. Storytelling-first productions
+            for brands that want to say something that lasts longer than a scroll.
+          </div>
         </div>
         <div class="srv-badge">Project</div>
       </div>
+
       <div class="srv-row" data-r>
         <div class="srv-n">04.</div>
         <div class="srv-body">
           <div class="srv-name">Post-Production &amp; Color</div>
-          <div class="srv-desc">Editing, color grading, and delivery. Bring me your raw footage — I'll return a polished, platform-ready cut with intentional, filmic color work.</div>
+          <div class="srv-desc">
+            Editing, color grading, and delivery. Bring me your raw footage - I will
+            return a polished, platform-ready cut with intentional, filmic color work.
+          </div>
         </div>
         <div class="srv-badge">Add-on</div>
       </div>
     </div>
   </section>
 
-  <!-- ── CONTACT ── -->
   <section id="contact">
     <p class="sec-label" data-r>Contact</p>
     <div class="contact-grid">
       <div class="contact-left">
-        <h2 class="contact-heading" data-r>Let's make<br/><em>something</em><br/>great</h2>
+        <h2 class="contact-heading" data-r>Let's make<br /><em>something</em><br />great</h2>
         <p class="contact-sub" data-r>
-          Whether you're a brand looking for a content partner, a restaurant wanting reels,
-          or a studio with a role — I'd love to hear from you.
+          Whether you're a brand looking for a content partner, a restaurant wanting
+          reels, or a studio with a role - I'd love to hear from you.
         </p>
         <div class="contact-links" data-r>
           <a href="mailto:hello@draftclub.studio" class="c-link">
             <span class="c-link-name">Email</span>
             <span class="c-link-val">hello@draftclub.studio</span>
-            <span class="c-link-arr">↗</span>
+            <span class="c-link-arr">&nearr;</span>
           </a>
-          <a href="https://instagram.com/draftclub.studios" target="_blank" class="c-link">
+          <a href="https://instagram.com/draftclub.studios" target="_blank" rel="noreferrer" class="c-link">
             <span class="c-link-name">Instagram</span>
             <span class="c-link-val">@draftclub.studios</span>
-            <span class="c-link-arr">↗</span>
+            <span class="c-link-arr">&nearr;</span>
           </a>
-          <a href="https://instagram.com/sometravelstuffs" target="_blank" class="c-link">
+          <a href="https://instagram.com/sometravelstuffs" target="_blank" rel="noreferrer" class="c-link">
             <span class="c-link-name">Personal IG</span>
             <span class="c-link-val">@sometravelstuffs</span>
-            <span class="c-link-arr">↗</span>
+            <span class="c-link-arr">&nearr;</span>
           </a>
-          <a href="#" class="c-link">
+          <a href="#hero" class="c-link">
             <span class="c-link-name">Based in</span>
             <span class="c-link-val">Riga, Latvia</span>
-            <span class="c-link-arr">—</span>
+            <span class="c-link-arr">-</span>
           </a>
         </div>
       </div>
+
       <div class="contact-right">
         <form class="cform" id="contactForm" novalidate>
           <div class="fg">
             <label class="flabel" for="name">Your name</label>
-            <input type="text" id="name" class="finput" placeholder="Jane Smith" required/>
+            <input type="text" id="name" name="name" class="finput" placeholder="Jane Smith" required />
           </div>
           <div class="fg">
             <label class="flabel" for="email">Email</label>
-            <input type="email" id="email" class="finput" placeholder="jane@brand.com" required/>
+            <input type="email" id="email" name="email" class="finput" placeholder="jane@brand.com" required />
           </div>
           <div class="fg">
             <label class="flabel" for="message">What are you looking for?</label>
-            <textarea id="message" class="ftextarea" placeholder="Tell me about your project or the role you're hiring for…" required></textarea>
+            <textarea
+              id="message"
+              name="message"
+              class="ftextarea"
+              placeholder="Tell me about your project or the role you're hiring for..."
+              required
+            ></textarea>
           </div>
-          <button type="submit" class="fsub">Send message →</button>
+          <button type="submit" class="fsub magnetic" id="contactSubmit">Send message -&gt;</button>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- ── FOOTER ── -->
   <footer>
     <span class="footer-brand">Abil Sebastian</span>
-    <span>© 2025 draftClub Studios — Riga, Latvia</span>
-    <span><a href="https://instagram.com/sometravelstuffs" target="_blank">@sometravelstuffs</a></span>
+    <span>&copy; 2026 draftClub Studios - Riga, Latvia</span>
+    <span><a href="https://instagram.com/sometravelstuffs" target="_blank" rel="noreferrer">@sometravelstuffs</a></span>
   </footer>
-
-  <!-- Scripts -->
-  <script src="js/cursor.js"></script>
-  <script src="js/nav.js"></script>
-  <script src="js/reveal.js"></script>
-  <script src="js/media.js"></script>
-  <script src="js/hero.js"></script>
-  <script src="js/work.js"></script>
-  <script src="js/modal.js"></script>
-  <script src="js/contact.js"></script>
-
 </body>
 </html>
