@@ -4,7 +4,10 @@ const MEDIA_LIBRARY = {
     sources: {
       hero: {
         kind: "video",
-        src: "assets/media/waitisover_reel2_60fps.mp4",
+        src: "assets/media/heroreel.mov",
+        width: 1920,
+        height: 1080,
+        syncVideoRatio: true,
         muted: true,
         loop: true,
         playsinline: true
@@ -13,7 +16,7 @@ const MEDIA_LIBRARY = {
     placeholder: {
       eyebrow: "Hero Video",
       title: "Showreel ready",
-      detail: "assets/media/waitisover_reel2_60fps.mp4",
+      detail: "assets/media/heroreel.mov",
       background: "linear-gradient(160deg, #1a1508 0%, #0b0a08 40%, #0d1218 100%)"
     }
   },
@@ -244,6 +247,37 @@ function getSlotOptions(slot) {
   };
 }
 
+function applyMediaAspectRatio(slot, source, node) {
+  if (!slot) {
+    return;
+  }
+
+  if (source && source.width && source.height) {
+    slot.style.setProperty("--media-aspect-ratio", `${source.width} / ${source.height}`);
+    return;
+  }
+
+  if (!node) {
+    return;
+  }
+
+  if (node instanceof HTMLVideoElement) {
+    const syncVideoRatio = () => {
+      if (!node.videoWidth || !node.videoHeight) {
+        return;
+      }
+
+      slot.style.setProperty("--media-aspect-ratio", `${node.videoWidth} / ${node.videoHeight}`);
+    };
+
+    if (node.readyState >= 1) {
+      syncVideoRatio();
+    } else {
+      node.addEventListener("loadedmetadata", syncVideoRatio, { once: true });
+    }
+  }
+}
+
 function showPlaceholder(slot, mediaKey, mediaVariant) {
   slot.replaceChildren(createPlaceholder(mediaKey, mediaVariant));
   slot.dataset.mediaState = "placeholder";
@@ -270,6 +304,8 @@ function renderMediaSlot(slot, key, variant = "default", options = {}) {
   if (!node) {
     return showPlaceholder(slot, mediaKey, mediaVariant);
   }
+
+  applyMediaAspectRatio(slot, source, node);
 
   const fallback = () => {
     showPlaceholder(slot, mediaKey, mediaVariant);
