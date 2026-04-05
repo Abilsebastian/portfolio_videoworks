@@ -4,7 +4,7 @@ const MEDIA_LIBRARY = {
     sources: {
       hero: {
         kind: "video",
-        src: "assets/media/heroreel.mov",
+        src: "assets/media/HEROREEL.mp4",
         width: 1920,
         height: 1080,
         syncVideoRatio: true,
@@ -16,7 +16,7 @@ const MEDIA_LIBRARY = {
     placeholder: {
       eyebrow: "Hero Video",
       title: "Showreel ready",
-      detail: "assets/media/heroreel.mov",
+      detail: "assets/media/HEROREEL.mp4",
       background: "linear-gradient(160deg, #1a1508 0%, #0b0a08 40%, #0d1218 100%)"
     }
   },
