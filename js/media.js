@@ -46,7 +46,7 @@ const MEDIA_LIBRARY = {
       },
       modal: {
         kind: 'video',
-        src: 'assets/media/work/not-my-section-ep01.mp4',
+        src: 'assets/media/works/ohhmybad.mp4',
         poster: 'assets/images/work/not-my-section-ep01.jpg'
       }
     },
