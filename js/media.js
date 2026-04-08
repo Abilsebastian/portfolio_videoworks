@@ -156,30 +156,7 @@ const MEDIA_LIBRARY = {
       background: "linear-gradient(165deg, #1a1008 0%, #150c06 50%, #0c0804 100%)"
     }
   },
-  work06: {
-    title: "Roads & Horizons",
-    category: "Cinematic - Travel",
-    client: "Personal Work",
-    sources: {},
-    placeholder: {
-      eyebrow: "Travel",
-      title: "Roads & Horizons",
-      detail: "Add a local media file in js/media.js",
-      background: "linear-gradient(160deg, #0a0f1a 0%, #0e1524 50%, #08090e 100%)"
-    }
-  },
-  work07: {
-    title: "Behind the Section",
-    category: "BTS - Social",
-    client: "Vapiano Latvia",
-    sources: {},
-    placeholder: {
-      eyebrow: "Behind The Scenes",
-      title: "Behind the Section",
-      detail: "Add a local media file in js/media.js",
-      background: "linear-gradient(155deg, #1c1005 0%, #2a1808 50%, #100904 100%)"
-    }
-  }
+
 };
 
 function getMediaEntry(key) {
@@ -252,7 +229,7 @@ function createMediaNode(source, options = {}) {
     video.src = source.src;
     video.className = "media-node media-node--video";
     video.playsInline = options.playsinline ?? source.playsinline ?? true;
-    video.loop = options.loop ?? source.loop ?? false;
+    video.loop = options.loop ?? source.loop ?? true;
     video.muted = options.muted ?? source.muted ?? false;
     video.controls = options.controls ?? source.controls ?? false;
     video.preload = options.preload || source.preload || "metadata";
