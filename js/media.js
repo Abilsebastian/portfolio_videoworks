@@ -132,13 +132,26 @@ const MEDIA_LIBRARY = {
 
   },
   work05: {
-    title: "Product Launch Reel",
+    title: "TikTok Product Reel",
     category: "Brand - Product",
-    client: "Riga Brand",
-    sources: {},
+    client: "Vapiano Latvia",
+    sources: {
+        default: {
+            kind: "video",
+            src: "assets/media/works/reel2 final.mp4",
+            muted: true,
+            loop: true,
+            playsinline: true
+    },
+        modal: {
+            kind: "video",
+            src: "assets/media/works/reel2 final.mp4",
+            playsinline: true
+        }
+    },
     placeholder: {
       eyebrow: "Brand",
-      title: "Product Launch Reel",
+      title: "TikTok Product Reel",
       detail: "Add a local media file in js/media.js",
       background: "linear-gradient(165deg, #1a1008 0%, #150c06 50%, #0c0804 100%)"
     }
