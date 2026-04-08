@@ -36,8 +36,11 @@ const MEDIA_LIBRARY = {
       background: "linear-gradient(160deg, #191712 0%, #11100d 50%, #0b0a08 100%)"
     }
   },
+  // Update work card titles, categories, and clients here.
   work01: {
     title: "Not My Section - EP 01",
+    category: "Restaurant - Split-screen",
+    client: "Vapiano Latvia",
     sources: {
       thumb: {
         kind: "video",
@@ -61,17 +64,46 @@ const MEDIA_LIBRARY = {
   },
   work02: {
     title: "Brand Identity Reel",
-    sources: {},
+    category: "Brand - Identity",
+    client: "Vapiano Latvia",
+    sources: {
+        default: {
+            kind: "video",
+            src: "assets/media/works/SUNDAYOPENING_FINAL.mp4",
+            muted: true,
+            loop: true,
+            playsinline: true
+        },
+        modal: {
+            kind: "video",
+            src: "assets/media/works/SUNDAYOPENING_FINAL.mp4",
+            playsinline: true
+        }
+    },
     placeholder: {
       eyebrow: "Brand",
       title: "Brand Identity Reel",
-      detail: "Add a local media file in js/media.js",
+      detail: "assets/media/works/SUNDAYOPENING_FINAL.mp4",
       background: "linear-gradient(160deg, #0a1520 0%, #0d2035 50%, #080e18 100%)"
     }
   },
   work03: {
-    title: "Serenity",
-    sources: {},
+    title: "Coffee Story",
+    category: "Storytelling - Short Film",
+    client: "Vapiano Latvia",
+    sources: {
+        default: {
+            kind: "video",
+            src: "assets/media/works/coffestoryfinal_ENG.mp4",
+            playsinline: true
+        },
+        modal: {
+            kind: "video",
+            src: "assets/media/works/coffestoryfinal_ENG.mp4",
+            playsinline: true
+        }
+        
+    },
     placeholder: {
       eyebrow: "Short Film",
       title: "Serenity.",
@@ -81,6 +113,8 @@ const MEDIA_LIBRARY = {
   },
   work04: {
     title: "Atmosphere Series",
+    category: "Restaurant - Social",
+    client: "Casa Nostra Riga",
     sources: {},
     placeholder: {
       eyebrow: "Restaurant",
@@ -91,6 +125,8 @@ const MEDIA_LIBRARY = {
   },
   work05: {
     title: "Product Launch Reel",
+    category: "Brand - Product",
+    client: "Riga Brand",
     sources: {},
     placeholder: {
       eyebrow: "Brand",
@@ -101,6 +137,8 @@ const MEDIA_LIBRARY = {
   },
   work06: {
     title: "Roads & Horizons",
+    category: "Cinematic - Travel",
+    client: "Personal Work",
     sources: {},
     placeholder: {
       eyebrow: "Travel",
@@ -111,6 +149,8 @@ const MEDIA_LIBRARY = {
   },
   work07: {
     title: "Behind the Section",
+    category: "BTS - Social",
+    client: "Vapiano Latvia",
     sources: {},
     placeholder: {
       eyebrow: "Behind The Scenes",
@@ -144,6 +184,21 @@ function getMediaSource(key, variant = "default") {
 function hasMediaSource(key, variant = "default") {
   const source = getMediaSource(key, variant);
   return Boolean(source && source.src);
+}
+
+function getProjectCopy(key) {
+  const entry = getMediaEntry(key);
+
+  if (!entry) {
+    return null;
+  }
+
+  return {
+    title: entry.title || "",
+    category: entry.category || "",
+    client: entry.client || "",
+    ariaLabel: entry.ariaLabel || (entry.title ? `Open ${entry.title}` : "Open project")
+  };
 }
 
 function createMediaNode(source, options = {}) {
@@ -330,6 +385,7 @@ function renderAllMediaSlots() {
 window.MediaLibrary = {
   entries: MEDIA_LIBRARY,
   getEntry: getMediaEntry,
+  getProjectCopy,
   getSource: getMediaSource,
   hasSource: hasMediaSource,
   createMediaNode,

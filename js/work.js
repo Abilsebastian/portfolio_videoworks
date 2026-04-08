@@ -2,7 +2,50 @@ const workCards = [...document.querySelectorAll(".wcard")];
 const workPin = document.getElementById("workPin");
 const workRail = document.getElementById("workRail");
 const workProgressBar = document.getElementById("workProgressBar");
+const workCount = document.querySelector(".work-count");
 let horizontalTween = null;
+
+function syncWorkCardContent(card) {
+  if (!card || !window.MediaLibrary || typeof window.MediaLibrary.getProjectCopy !== "function") {
+    return;
+  }
+
+  const projectCopy = window.MediaLibrary.getProjectCopy(card.dataset.mediaKey);
+
+  if (!projectCopy) {
+    return;
+  }
+
+  const categoryNode = card.querySelector("[data-work-field='category']");
+  const titleNode = card.querySelector("[data-work-field='title']");
+  const clientNode = card.querySelector("[data-work-field='client']");
+
+  if (categoryNode) {
+    categoryNode.textContent = projectCopy.category;
+    categoryNode.hidden = !projectCopy.category;
+  }
+
+  if (titleNode) {
+    titleNode.textContent = projectCopy.title;
+  }
+
+  if (clientNode) {
+    clientNode.textContent = projectCopy.client;
+    clientNode.hidden = !projectCopy.client;
+  }
+
+  card.setAttribute("aria-label", projectCopy.ariaLabel);
+}
+
+function syncWorkCards() {
+  workCards.forEach(syncWorkCardContent);
+
+  if (workCount) {
+    workCount.textContent = `${String(workCards.length).padStart(2, "0")} films`;
+  }
+}
+
+syncWorkCards();
 
 function openWorkCard(card) {
   if (!card || !window.Modal) {

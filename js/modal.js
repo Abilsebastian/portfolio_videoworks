@@ -1,6 +1,9 @@
 const modal = document.getElementById("modal");
 const modalClose = document.getElementById("modalClose");
 const modalMedia = document.getElementById("modalMedia");
+const modalCategory = document.getElementById("modalCategory");
+const modalTitle = document.getElementById("modalTitle");
+const modalCaption = document.getElementById("modalCaption");
 let activeModalNode = null;
 
 function stopSmoothScroll() {
@@ -27,12 +30,57 @@ function clearModalMedia() {
   }
 }
 
+function clearModalCopy() {
+  if (modalCategory) {
+    modalCategory.textContent = "";
+    modalCategory.hidden = true;
+  }
+
+  if (modalTitle) {
+    modalTitle.textContent = "";
+  }
+
+  if (modalCaption) {
+    modalCaption.textContent = "";
+    modalCaption.hidden = true;
+  }
+}
+
+function syncModalCopy(mediaKey) {
+  if (!window.MediaLibrary || typeof window.MediaLibrary.getProjectCopy !== "function") {
+    clearModalCopy();
+    return;
+  }
+
+  const projectCopy = window.MediaLibrary.getProjectCopy(mediaKey);
+
+  if (!projectCopy) {
+    clearModalCopy();
+    return;
+  }
+
+  if (modalCategory) {
+    modalCategory.textContent = projectCopy.category;
+    modalCategory.hidden = !projectCopy.category;
+  }
+
+  if (modalTitle) {
+    modalTitle.textContent = projectCopy.title;
+  }
+
+  if (modalCaption) {
+    modalCaption.textContent = projectCopy.client;
+    modalCaption.hidden = !projectCopy.client;
+  }
+}
+
 function openModalByKey(mediaKey) {
   if (!modal || !modalMedia || !window.MediaLibrary) {
     return;
   }
 
   clearModalMedia();
+  syncModalCopy(mediaKey);
 
   const source =
     window.MediaLibrary.getSource(mediaKey, "modal") ||
@@ -87,6 +135,7 @@ function closeModal() {
   modal.setAttribute("aria-hidden", "true");
   document.body.classList.remove("modal-open");
   clearModalMedia();
+  clearModalCopy();
   startSmoothScroll();
 }
 

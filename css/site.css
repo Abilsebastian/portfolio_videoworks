@@ -985,6 +985,8 @@ section {
 .modal-box {
   position: relative;
   width: min(960px, 92vw);
+  display: grid;
+  gap: 18px;
 }
 
 .modal-media-wrap {
@@ -1000,6 +1002,36 @@ section {
 
 .modal-media-wrap .media-placeholder {
   justify-content: center;
+}
+
+.modal-copy {
+  display: grid;
+  gap: 6px;
+  padding-inline: 2px;
+}
+
+.modal-cat {
+  color: var(--amber);
+  font-size: 9px;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  opacity: 0.72;
+  text-transform: uppercase;
+}
+
+.modal-title {
+  color: var(--cream);
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 34px);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.05;
+}
+
+.modal-caption {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
 }
 
 .modal-x {
@@ -1550,6 +1582,10 @@ footer a:focus-visible {
     display: none;
   }
 
+  .modal-box {
+    width: min(720px, calc(100vw - 32px));
+  }
+
   .srv-row {
     grid-template-columns: 40px 1fr;
     gap: 20px;
@@ -1678,6 +1714,15 @@ footer a:focus-visible {
 
   .wcard-info {
     padding: 12px 14px 14px;
+  }
+
+  .modal-box {
+    width: calc(100vw - 24px);
+    gap: 14px;
+  }
+
+  .modal-title {
+    font-size: 24px;
   }
 
   .srv-top,
