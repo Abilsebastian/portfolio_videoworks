@@ -32,7 +32,7 @@ if (contactForm && contactSubmit) {
 
     const subject = encodeURIComponent(`Portfolio enquiry from ${name}`);
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
-    window.location.href = `mailto:hello@draftclub.studio?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:abilseb.dev@gmail.com?subject=${subject}&body=${body}`;
 
     contactForm.reset();
     contactSubmit.classList.remove("is-busy", "is-error");
