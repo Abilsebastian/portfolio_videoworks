@@ -102,7 +102,7 @@ const MEDIA_LIBRARY = {
             src: "assets/media/works/coffestoryfinal_ENG.mp4",
             playsinline: true
         }
-        
+
     },
     placeholder: {
       eyebrow: "Short Film",
@@ -112,16 +112,24 @@ const MEDIA_LIBRARY = {
     }
   },
   work04: {
-    title: "Atmosphere Series",
-    category: "Restaurant - Social",
-    client: "Casa Nostra Riga",
-    sources: {},
-    placeholder: {
-      eyebrow: "Restaurant",
-      title: "Atmosphere Series",
-      detail: "Add a local media file in js/media.js",
-      background: "linear-gradient(155deg, #102018 0%, #0a1810 50%, #060e0a 100%)"
-    }
+    title: "Brand Teaser",
+    category: "Brand - Teaser",
+    client: "Draftclub Studios",
+    sources: {
+        default: {
+            kind: "video",
+            src: "assets/media/works/waitisover_reel.mp4",
+            muted: true,
+            loop: true,
+            playsinline: true
+        },
+        modal: {
+            kind: "video",
+            src: "assets/media/works/waitisover_reel.mp4",
+            playsinline: true
+        }
+    },
+
   },
   work05: {
     title: "Product Launch Reel",
